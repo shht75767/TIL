@@ -1,7 +1,7 @@
 # Dynamic Component Generation
 
 * 웹 사이트에 수동이 아닌 동적 데이트를 추가하는 방법
-** map - array의 각 item에서 function을 실행시켜 새로운 array를 줌
+    * map - array의 각 item에서 function을 실행시켜 새로운 array를 줌
 ```js
 function Food({ name, picture }) {
   return (
