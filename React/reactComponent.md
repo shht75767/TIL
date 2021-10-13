@@ -16,5 +16,17 @@ function Potato(){
 ```
 ** 마지막엔 export default Potato
 ** index.js 에서 potato.js를 import
-
+*** react app에선 하나의 component만 rendering해야 하므로 기존의 app안에 Potato를 넣어야함
+***app.js안에 import Potato form "./Potato" -- ./는 같은 src라는 directory에 있기에 사용
+*** app.js의 app안에 potato사용
+```
+function App(){
+    return (
+        <div>
+        <h1>Hello</h1>
+        <Potato/>
+        </div>
+    );
+}
+```
 
