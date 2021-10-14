@@ -8,3 +8,38 @@
 * 만약 setState function을 호출하면, react는 언제 setState를 호출할 지를 알고 또한 내가 view를 refresh하길 원하는걸 알고 render를 refresh하길 원하는걸 안다
     * 쉽게 말해 state의 숫자가 바뀔때 react는 어떤것이든 refresh해주길 원함, 이걸 해결해주는게 setState! state를 refresh 할때 render function도 함께 refrest!
 * state는 object이므로 setState는 새로운 state를 받아야하고, 따라서 setState({count:1})
+`add = () => {this.setState({ count: this.state.count + 1})}`
+`minus = () =>  {this.setState({ count: this.state.count - 1})}`
+* 위 아래는 같은 함수지만 위의 함수들은 state에 의존하기 때문에 나중에 성능문제가 있을수있음
+`add = () => {this.setState(current => ({ count : current.count +1}))} `
+`minus = () => {this.setState(current => ({ count : current.count -1}))}`
+* 외부의 영향을 받지 않는 가장 이상적인 방법
+
+```js
+import React from "react";
+
+class App extends React.Component{
+  state = {
+    count : 0
+  };
+    add = () => {this.setState(current => ({count : current.count + 1}))
+    };
+    minus = () => {this.setState(current => ({ count : current.count -1}))
+    };
+  render(){
+    return(
+      <div>
+        <h1>The number is {this.state.count}</h1>
+        <button onClick = {this.add}>add</button>
+        <button onClick = {this.minus} >minus</button>
+      </div>
+    )
+  }
+}
+
+
+
+
+export default App; 
+```
+
