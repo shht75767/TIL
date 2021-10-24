@@ -32,7 +32,7 @@ Movie.propTypes = {
             </li>
           ))}
         </ul>
-        <p class="movie__summary">{summary}</p>
+        <p class="movie__summary">{summary.slice(0,180)}...</p>
       </div>
     </div>
   );
