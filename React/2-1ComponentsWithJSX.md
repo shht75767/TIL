@@ -23,6 +23,6 @@ function App() {
   );
 }
 ```
-    * Food라는 component에 fav라는 이름의 property를 Kimchi라는 value를 줌
+* Food라는 component에 fav라는 이름의 property를 Kimchi라는 value를 줌
     * props는 Food의 component에 들어가있는 property를 합쳐서 부르는 말
     * `function Food(props.fav)`=``function Food({fav})`` 를 console.log로 부르게 된다면 안에 있는 것들이 object로 나오는데  내부에있는 fav를 위와 같은 형식으로 한번에 부를 수 있음

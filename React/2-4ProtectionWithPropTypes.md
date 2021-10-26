@@ -7,7 +7,7 @@
 
 * component의 prop 사용시 전달받은 props가 맞는지 늘 점검(확인)이 필요함
 * npm i prop-types : 전달받은 props가 내가 원하는 props인지를 확인
-    * 설치확인은 package.json에서 dependencies에 prop-types가 있는지 확인
+    * 설치확인은 package.json에서 dependencies에 prop-types가 있 는지 확인
 * prop-types 사용 방법
     * import PropTypes from "prop-types";
     * function 사이에 Food.propTypes = {

@@ -1,4 +1,4 @@
-* Deploying to Github Pages
+# Deploying to Github Pages
     * 소문자, 띄어쓰기 금지
 
 * 깃 허브 페이지 생성 (branch)
