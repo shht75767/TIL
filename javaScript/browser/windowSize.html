@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window_size</title>
+    <style>
+      .window_class {
+        display: inline-block;
+        background-color: bisque;
+        margin: 16px;
+        padding: 16px;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- window.screen 컴퓨터 화면 자체의 크기
+         window.outer 윈도우 전체의 크기 (스크롤, URL, TAB 등 다 포함)
+         window.inner 윈도우 크기중 URL, TAB를 제외 (스크롤은 포함)
+         documentElement.clientWidth 순수 document 크기 -->
+    <div class="window_class">window_size</div>
+    <script>
+      const windowSize = document.querySelector('.window_class');
+      function paintWindow() {
+        windowSize.innerText = `
+            window.screen : ${window.screen.width}, ${window.screen.height}
+            window.outer: ${window.outerWidth}, ${window.outerHeight}
+            window.inner: ${window.innerWidth}, ${window.innerHeight}
+            documentElement.clientWidth: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
+            `;
+      }
+      window.addEventListener('resize', () => {
+        paintWindow();
+      });
+      paintWindow();
+    </script>
+  </body>
+</html>
