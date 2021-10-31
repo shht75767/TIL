@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    margin: 0px; /*기본으로 있는 마진들때문에 좌표가 안 맞아 따로 지정*/
 }
 
 .line {
@@ -11,26 +12,20 @@ body{
 .horizontal{
     width: 100%;
     height: 1px;
-    top: 50%;
 }
 
 .vertical {
     height: 100%;
     width: 1px;
-    left: 50%;
 }
 
 .target {
     position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%,-50%);
 }
 .tag {
     color: white;
     position: absolute;
-    top: 50%;
-    left: 50%;
     font-size: 40px;
-    transform: translate(20px,20px);
+    margin: 20px;
 }
