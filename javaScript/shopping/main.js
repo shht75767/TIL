@@ -5,7 +5,6 @@ const form = document.querySelector('.footer__form');
 const input = document.querySelector('.footer__input');
 const ul = document.querySelector('.items');
 const button = document.querySelector('.item__delete');
-const items = document.querySelector('.item');
 
 function paintList(shopList) {
   const div = document.createElement('div');
@@ -21,21 +20,24 @@ function paintList(shopList) {
   const btn = document.createElement('button');
   btn.innerText = '🗑';
   btn.setAttribute('class', 'item__delete');
-  button.addEventListener('click', (event) => {
-    console.log(event);
-  });
-
   div.appendChild(span);
   div.appendChild(btn);
   li.appendChild(div);
   ul.appendChild(li);
-}
 
+  btn.addEventListener('click', (event) => {
+    ul.removeChild(li);
+  });
+}
 function addList(event) {
   event.preventDefault();
   let shopList = input.value;
+  if (shopList == '') {
+    return;
+  }
   paintList(shopList);
+  ul.scrollIntoView({ block: 'center' });
   input.value = '';
+  input.focus();
 }
-
 form.addEventListener('submit', addList);
