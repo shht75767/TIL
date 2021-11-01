@@ -5,6 +5,7 @@ const form = document.querySelector('.footer__form');
 const input = document.querySelector('.footer__input');
 const ul = document.querySelector('.items');
 const button = document.querySelector('.item__delete');
+const items = document.querySelector('.item');
 
 function paintList(shopList) {
   const div = document.createElement('div');
@@ -20,6 +21,9 @@ function paintList(shopList) {
   const btn = document.createElement('button');
   btn.innerText = '🗑';
   btn.setAttribute('class', 'item__delete');
+  button.addEventListener('click', (event) => {
+    console.log(event);
+  });
 
   div.appendChild(span);
   div.appendChild(btn);
@@ -34,8 +38,4 @@ function addList(event) {
   input.value = '';
 }
 
-function deleteItem(event) {
-  console.log(event);
-}
 form.addEventListener('submit', addList);
-button.addEventListener('click', deleteItem);
